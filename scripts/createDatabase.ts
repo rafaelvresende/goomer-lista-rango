@@ -16,7 +16,6 @@ try {
         CREATE TABLE restaurant (
             id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
-            photo BLOB NOT NULL,
             street VARCHAR(100) NOT NULL,
             number VARCHAR(15) NOT NULL,
             neighborhood VARCHAR(100) NOT NULL,
@@ -41,7 +40,6 @@ try {
         CREATE TABLE product (
             id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
-            photo BLOB NOT NULL,
             value REAL NOT NULL,
             category VARCHAR(20) NOT NULL,
             promotionDescription VARCHAR(100),
