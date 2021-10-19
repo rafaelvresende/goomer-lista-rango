@@ -1,6 +1,6 @@
-import db from "../../../../utils/databaseConnection";
+import db from "@utils/databaseConnection";
 
-import { IAddOpeningHoursDTO, ICreateRestaurantDTO, IUpdateRestaurantDTO } from "../dtos/IRestaurantRepositoryDTOs";
+import { IAddOpeningHoursDTO, ICreateRestaurantDTO } from "../dtos/IRestaurantRepositoryDTOs";
 import IRestaurantRepository from "../IRestaurantRepository";
 
 import Restaurant from "../../entities/Restaurant";
@@ -9,22 +9,25 @@ import RestaurantOpeningHours from "../../entities/RestaurantOpeningHours";
 import * as RestaurantViews from "../../views/restaurant.views";
 import * as RestaurantOpeningHoursViews from "../../views/restaurantOpeningHours.views";
 
+import { ResultSetHeader } from "mysql2";
+
 export default class RestaurantRepository implements IRestaurantRepository {
 
     public async listRestaurants(): Promise<Restaurant[]> {
 
-        const restaurants: any[] = [];
-
         try {
+
+            const restaurants: any[] = [];
 
             const [rows, fields] = await db.execute("SELECT * FROM restaurant;");
             if (Array.isArray(rows)) restaurants.push(...rows);
 
+            return RestaurantViews.formatAllToEntities(restaurants);
+
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao buscar restaurantes!");
         }
-
-        return RestaurantViews.formatAllToEntities(restaurants);
     }
 
     public async createRestaurant({
@@ -34,31 +37,39 @@ export default class RestaurantRepository implements IRestaurantRepository {
         neighborhood,
         city,
         state,
-    }: ICreateRestaurantDTO): Promise<void> {
+    }: ICreateRestaurantDTO): Promise<number> {
 
         try {
 
-            await db.execute(`
+            const [ resultSetHeader ] = await db.execute(`
                 INSERT INTO restaurant
                 (name, street, number, neighborhood, city, state)
                 VALUES ('${name}', '${street}', '${number}', '${neighborhood}', '${city}', '${state}');
             `);
 
+            const id = ((resultSetHeader as ResultSetHeader).insertId);
+
+            return id;
+
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao criar restaurante!");
         }
     }
 
-    public async getRestaurantById(id: number): Promise<Restaurant|undefined> {
+    public async getRestaurantById(id: number): Promise<Restaurant> {
 
         try {
 
             const [rows, fields] = await db.execute(`SELECT * FROM restaurant WHERE id = ${id};`);
-            return Array.isArray(rows) && rows.length > 0 ? RestaurantViews.formatToEntity(rows[0]) : undefined;
+
+            if (!(Array.isArray(rows) && rows.length > 0)) throw new Error("Restaurante não encontrado!");
+
+            return RestaurantViews.formatToEntity(rows[0]);
 
         } catch(error) {
             console.log(error);
-            return undefined;
+            throw new Error("Restaurante não encontrado!");
         }        
     }
 
@@ -70,7 +81,7 @@ export default class RestaurantRepository implements IRestaurantRepository {
         neighborhood,
         city,
         state,
-    }: IUpdateRestaurantDTO): Promise<void> {
+    }: Restaurant): Promise<void> {
 
         try {
 
@@ -82,6 +93,7 @@ export default class RestaurantRepository implements IRestaurantRepository {
 
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao atualizar os dados do restaurante!");
         }
     }
 
@@ -93,6 +105,7 @@ export default class RestaurantRepository implements IRestaurantRepository {
 
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao excluir restaurante!");
         }
     }
 
@@ -113,6 +126,7 @@ export default class RestaurantRepository implements IRestaurantRepository {
 
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao adicionar horário de funcionamento!");
         }
     }
 
@@ -124,22 +138,24 @@ export default class RestaurantRepository implements IRestaurantRepository {
 
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao remover horário de funcionamento!");
         }
     }
 
     public async listOpeningHoursByRestaurant(restaurantId: number): Promise<RestaurantOpeningHours[]> {
 
-        const openingHours: any[] = [];
-
         try {
+
+            const openingHours: any[] = [];
 
             const [rows, fields] = await db.execute(`SELECT * FROM opening_hours WHERE restaurant_id = ${restaurantId};`);
             if (Array.isArray(rows)) openingHours.push(...rows);
 
+            return RestaurantOpeningHoursViews.formatAllToEntities(openingHours);
+
         } catch(error) {
             console.log(error);
+            throw new Error("Falha ao buscar horários de funcionamento!");
         }
-
-        return RestaurantOpeningHoursViews.formatAllToEntities(openingHours);
     }
 }

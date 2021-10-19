@@ -1,5 +1,3 @@
-import RestaurantOpeningHours from "./RestaurantOpeningHours";
-
 export default class Restaurant {
     id: number;
     name: string;

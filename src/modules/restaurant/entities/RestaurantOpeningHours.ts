@@ -1,4 +1,4 @@
-import IDayOfTheWeek from "../../../shared/interfaces/IDayOfTheWeek";
+import IDayOfTheWeek from "@shared/interfaces/IDayOfTheWeek";
 
 export default class RestaurantOpeningHours {
     id: number;

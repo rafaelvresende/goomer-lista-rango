@@ -1,6 +1,6 @@
 import Restaurant from "../entities/Restaurant";
 import RestaurantOpeningHours from "../entities/RestaurantOpeningHours";
-import { IAddOpeningHoursDTO, ICreateRestaurantDTO, IUpdateRestaurantDTO } from "./dtos/IRestaurantRepositoryDTOs";
+import { IAddOpeningHoursDTO, ICreateRestaurantDTO } from "./dtos/IRestaurantRepositoryDTOs";
 
 export default interface IRestaurantRepository {
 
@@ -13,9 +13,9 @@ export default interface IRestaurantRepository {
         neighborhood,
         city,
         state,
-    }: ICreateRestaurantDTO): Promise<void>;
+    }: ICreateRestaurantDTO): Promise<number>;
 
-    getRestaurantById(id: number): Promise<Restaurant|undefined>;
+    getRestaurantById(id: number): Promise<Restaurant>;
 
     updateRestaurant({
         id,
@@ -25,7 +25,7 @@ export default interface IRestaurantRepository {
         neighborhood,
         city,
         state,
-    }: IUpdateRestaurantDTO): Promise<void>;
+    }: Restaurant): Promise<void>;
 
     deleteRestaurant(id: number): Promise<void>;
 
