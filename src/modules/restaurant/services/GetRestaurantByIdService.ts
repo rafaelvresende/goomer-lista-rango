@@ -1,4 +1,5 @@
 import { DaysOfTheWeekDescriptions } from "@shared/interfaces/IDayOfTheWeek";
+import validateAndFormatTime from "@shared/utils/validateAndFormatTime";
 import { injectable, container, inject } from "tsyringe";
 import Restaurant from "../entities/Restaurant";
 import RestaurantOpeningHours from "../entities/RestaurantOpeningHours";
@@ -37,7 +38,8 @@ export default class GetRestaurantByIdService {
                 ...openingHours,
                 dayName: DaysOfTheWeekDescriptions[openingHours.day],
             };
-            // TO DO: remover segundos das horas
+            parsedOpeningHours.startTime = validateAndFormatTime(openingHours.startTime).time;
+            parsedOpeningHours.endTime = validateAndFormatTime(openingHours.endTime).time;
             return parsedOpeningHours;
         });
 
