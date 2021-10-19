@@ -30,7 +30,6 @@
     "baseUrl": "./",                                     /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@modules/*": ["./src/modules/*"],
-      "@utils/*": ["./src/utils/*"],
       "@shared/*": ["./src/shared/*"],
       "@setup/*": ["./src/setup/*"],
     },                                                   /* Specify a set of entries that re-map imports to additional lookup locations. */

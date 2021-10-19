@@ -1,4 +1,4 @@
-import db from "@utils/databaseConnection";
+import db from "@shared/utils/databaseConnection";
 
 import { IAddOpeningHoursDTO, ICreateRestaurantDTO } from "../dtos/IRestaurantRepositoryDTOs";
 import IRestaurantRepository from "../IRestaurantRepository";
