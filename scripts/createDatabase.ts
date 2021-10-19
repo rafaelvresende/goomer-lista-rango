@@ -1,22 +1,22 @@
 import mysql from "mysql2";
+import "dotenv/config";
 
 try {
 
     const con = mysql.createConnection({
-        host: "localhost",
-        user: "root",
+        host: process.env.DATABASE_HOST,
+        user: process.env.DATABASE_USER,
         multipleStatements: true,
     });
 
     const sqlCommand = `
-        CREATE SCHEMA lista_rango_db;
+        CREATE SCHEMA ${process.env.DATABASE_NAME};
 
-        USE lista_rango_db;
+        USE ${process.env.DATABASE_NAME};
 
         CREATE TABLE restaurant (
             id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
-            photo BLOB NOT NULL,
             street VARCHAR(100) NOT NULL,
             number VARCHAR(15) NOT NULL,
             neighborhood VARCHAR(100) NOT NULL,
@@ -41,7 +41,6 @@ try {
         CREATE TABLE product (
             id INT NOT NULL AUTO_INCREMENT,
             name VARCHAR(100) NOT NULL,
-            photo BLOB NOT NULL,
             value REAL NOT NULL,
             category VARCHAR(20) NOT NULL,
             promotionDescription VARCHAR(100),
