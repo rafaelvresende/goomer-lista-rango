@@ -1,5 +1,5 @@
-import { DaysOfTheWeekDescriptions } from "@shared/interfaces/IDayOfTheWeek";
-import validateAndFormatTime from "@shared/utils/validateAndFormatTime";
+import { DaysOfTheWeekDescriptions } from "../../../shared/interfaces/IDayOfTheWeek";
+import validateAndFormatTime from "../../../shared/utils/validateAndFormatTime";
 import { injectable, container, inject } from "tsyringe";
 import Restaurant from "../entities/Restaurant";
 import RestaurantOpeningHours from "../entities/RestaurantOpeningHours";
