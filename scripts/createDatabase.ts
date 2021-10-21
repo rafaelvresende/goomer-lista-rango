@@ -43,8 +43,8 @@ try {
             name VARCHAR(100) NOT NULL,
             value REAL NOT NULL,
             category VARCHAR(20) NOT NULL,
-            promotionDescription VARCHAR(100),
-            promotionValue REAL,
+            promotion_description VARCHAR(100),
+            promotion_value REAL,
             restaurant_id INT NOT NULL,
             PRIMARY KEY (id),
             FOREIGN KEY (restaurant_id)
