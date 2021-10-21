@@ -1,0 +1,597 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2021-10-21T20:23:03.070Z",
+    "__export_source": "insomnia.desktop.app:v2021.2.1",
+    "resources": [
+        {
+            "_id": "req_7c8b90b64c4b47cc90338029765fb0bc",
+            "parentId": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "modified": 1634774227441,
+            "created": 1634410536443,
+            "url": "{{ _.baseURL }}",
+            "name": "Home",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1634774178234,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "parentId": null,
+            "modified": 1634410536426,
+            "created": 1634410536426,
+            "name": "Goomer Lista Rango",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_216c71d160d946d5b26e5198c4e09164",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634774182677,
+            "created": 1634502827443,
+            "url": "{{ _.baseURL }}/restaurants",
+            "name": "listRestaurants",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1619048095950.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "parentId": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "modified": 1634774276075,
+            "created": 1634774178184,
+            "name": "Restaurant",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1634774178221.5,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_e8701a995c99432ca84deb7d9c6a4476",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634774209919,
+            "created": 1634656617790,
+            "url": "{{ _.baseURL }}/restaurants/daysOfTheWeek",
+            "name": "daysOfTheWeek",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1619048095925.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ced170ff68e842c0af4220f819d995a4",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634774852771,
+            "created": 1634502666761,
+            "url": "{{ _.baseURL }}/restaurants/restaurant",
+            "name": "createRestaurant",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Sabor e Saúde\",\n  \"street\": \"Av João Pinheiro\",\n  \"number\": \"750\",\n  \"neighborhood\": \"Centro\",\n  \"city\": \"Uberlândia\",\n\t\"state\": \"MG\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_28ea9a347e0c4e449a700a9b76f5eabb"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095900.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_275f631233c2498eb7ab1eadbeb95a5d",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634775245016,
+            "created": 1634505544440,
+            "url": "{{ _.baseURL }}/restaurants/restaurant",
+            "name": "getRestaurant",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"restaurantId\": 1\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_eeefb1c869a649a2997f20068a02a655"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095850.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c2ceb2768c674105ad551599dfbcbb10",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634774937052,
+            "created": 1634507460117,
+            "url": "{{ _.baseURL }}/restaurants/restaurant",
+            "name": "updateRestaurant",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": 2,\n\t\"name\": \"Casa da Avó\",\n  \"street\": \"RUA\",\n  \"number\": \"N\",\n  \"neighborhood\": \"BAIRRO\",\n  \"city\": \"CIDADE\",\n  \"state\": \"ESTADO\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_28ea9a347e0c4e449a700a9b76f5eabb"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095800.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_3cd316cb0c744ec081771e73340780dd",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634774992851,
+            "created": 1634508411774,
+            "url": "{{ _.baseURL }}/restaurants/restaurant",
+            "name": "deleteRestaurant",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"restaurantId\": 3\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_eeefb1c869a649a2997f20068a02a655"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095750.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_79f5742819a34ab094a869c536738bfe",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634775193616,
+            "created": 1634509560648,
+            "url": "{{ _.baseURL }}/restaurants/restaurant/openingHours",
+            "name": "addOpeningHours",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"days\": [\"monday\", \"tuesday\", \"wednesday\", \"thursday\", \"friday\"],\n\t\"startTime\": \"08:00\",\n\t\"endTime\": \"18:00\",\n\t\"restaurantId\": 1\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_28ea9a347e0c4e449a700a9b76f5eabb"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095700.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b3304407796c4f35815916a00cb00629",
+            "parentId": "fld_21cb1a0c0cd4415891537cc2adf0dcbf",
+            "modified": 1634775302611,
+            "created": 1634510936994,
+            "url": "{{ _.baseURL }}/restaurants/restaurant/openingHours",
+            "name": "removeOpeningHours",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"openingHoursId\": 5\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_eeefb1c869a649a2997f20068a02a655"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095650.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9d16ecd4b6a14718a8fb7fff5ca1b889",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634775841230,
+            "created": 1634774341043,
+            "url": "{{ _.baseURL }}/products",
+            "name": "listProductsByRestaurant",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"restaurantId\": 1\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095938,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "parentId": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "modified": 1634774271935,
+            "created": 1634774239601,
+            "name": "Product",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1634774178209,
+            "_type": "request_group"
+        },
+        {
+            "_id": "req_ace418221eea4e8fa9e80b895978bd5e",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634777027622,
+            "created": 1634777013426,
+            "url": "{{ _.baseURL }}/products/categories",
+            "name": "productCategories",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": ""
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095934.875,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c957bf16e87e4f72b985161f7875ec9c",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634777309274,
+            "created": 1634775520622,
+            "url": "{{ _.baseURL }}/products/product",
+            "name": "createProduct",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Kuat\",\n  \"value\": 5,\n  \"category\": \"drink\",\n  \"restaurantId\": \"1\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095931.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_331328df25ea482fa9be7b0bf68b11dc",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634780355640,
+            "created": 1634775912562,
+            "url": "{{ _.baseURL }}/products/product",
+            "name": "getProduct",
+            "description": "",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"productId\": 2\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095881.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2a03d5230e95469ba46cff34f58708b9",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634778174630,
+            "created": 1634777212533,
+            "url": "{{ _.baseURL }}/products/product",
+            "name": "updateProduct",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": 4,\n  \"name\": \"Kuat Guarana\",\n  \"value\": 7.5,\n  \"category\": \"drink\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095873.9375,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_06e78b6655304c23be2c9b46ca5659e1",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634778227677,
+            "created": 1634778167828,
+            "url": "{{ _.baseURL }}/products/product",
+            "name": "deleteProduct",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"productId\": 4\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095866.125,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_56cf71458dfb4f51a7a027646dc67550",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634780763126,
+            "created": 1634778335661,
+            "url": "{{ _.baseURL }}/products/product/promotion",
+            "name": "updatePromotion",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"productId\": 2,\n  \"promotionDescription\": \"Oferta sanduíche 2!\",\n  \"promotionValue\": 9.99,\n  \"promotionHours\": [\n    {\n\t\t\t\"id\": 1,\n\t\t\t\"day\": \"tuesday\",\n\t\t\t\"startTime\": \"20:00\",\n\t\t\t\"endTime\": \"21:00\"\n\t\t},\n\t\t{\n\t\t\t\"day\": \"thursday\",\n\t\t\t\"startTime\": \"20:00\",\n\t\t\t\"endTime\": \"21:00\"\n\t\t}\n  ]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095858.3125,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2ed45dd278d14392af4ebb2c8c58ab4e",
+            "parentId": "fld_d671f946eb094e70a9fc91a2b5a2a6a9",
+            "modified": 1634780474438,
+            "created": 1634780427118,
+            "url": "{{ _.baseURL }}/products/product/promotion",
+            "name": "removePromotion",
+            "description": "",
+            "method": "DELETE",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"productId\": 2\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_a0353d29725d4e629c904b3b540d93b2"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1619048095854.4062,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_4fb905a7bf944d3e87c0ac7cf1dfd69f",
+            "parentId": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "modified": 1634410536428,
+            "created": 1634410536428,
+            "name": "Base Environment",
+            "data": {
+                "baseURL": "http://localhost:3333"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "baseURL"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1616983122489,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_b587a5079dfc4348b45e987dd1cd9447",
+            "parentId": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "modified": 1634410536431,
+            "created": 1634410536431,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_e761c6688dae418785bef26660a327e0",
+            "parentId": "wrk_cb0d6b4d2fa548bbb5f6ad17f013def9",
+            "modified": 1634410536455,
+            "created": 1634410536433,
+            "fileName": "Goomer Lista Rango",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}
