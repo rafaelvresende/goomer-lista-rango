@@ -1,4 +1,4 @@
-import IDayOfTheWeek, { DaysOfTheWeekDescriptions, ValidDaysOfTheWeekList } from "@shared/interfaces/IDayOfTheWeek";
+import IDayOfTheWeek, { DaysOfTheWeekDescriptions, ValidDaysOfTheWeekList } from "../../../shared/interfaces/IDayOfTheWeek";
 import { injectable, container } from "tsyringe";
 
 interface IDayOfTheWeekObject {

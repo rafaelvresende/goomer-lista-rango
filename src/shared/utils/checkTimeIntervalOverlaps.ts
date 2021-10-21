@@ -1,4 +1,4 @@
-import IDayOfTheWeek, { DaysOfTheWeekDescriptions } from "@shared/interfaces/IDayOfTheWeek";
+import IDayOfTheWeek, { DaysOfTheWeekDescriptions } from "../../shared/interfaces/IDayOfTheWeek";
 import getTimeIntervalDuration from "./getTimeIntervalDuration";
 import validateAndFormatTime from "./validateAndFormatTime";
 
