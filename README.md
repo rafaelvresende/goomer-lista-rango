@@ -27,6 +27,7 @@ O projeto foi desenvolvido baseando-se em uma estrutura de módulos. Cada módul
 - *services*: concentram as regras de negócio, fazem o processamento dos dados obtidos dos repositórios e devolvem a informação formatada e tratada
 - *controllers*: administram a execução dos serviços adequados para as rotas externalizadas
 - *routes*: contém os endpoints da aplicação  
+  
 O projeto foi assim dividido em dois módulos, um para desenvolvimento das entidades referentes ao cadastro dos restaurantes e de seus horários de funcionamento, e outro para desenvolvimento das entidades referentes ao cadastro de produtos e de seus horários promocionais.
 O banco de dados foi estruturado com quatro tabelas:
 - uma para os dados dos restaurantes
@@ -47,12 +48,12 @@ Resposta: lista com os valores formatados dos dias da semana, para preenchimento
 - **Cadastro de um novo restaurante**  
 Endpoint: (POST)"/restaurants/restaurant"  
 Requisição: {  
-    name: string  
-    street: string  
-    number: string  
-    neighborhood: string  
-    city: string  
-    state: string  
+> name: string  
+> street: string  
+> number: string  
+> neighborhood: string  
+> city: string  
+> state: string  
 }  
 Obs.: todos os parâmetros são obrigatórios para cadastro de um novo restaurante.  
 Resposta: dados do novo restaurante cadastrado.  
