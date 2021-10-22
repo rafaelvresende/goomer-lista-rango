@@ -1,7 +1,7 @@
-import IDayOfTheWeek, { ValidDaysOfTheWeekList } from "@shared/interfaces/IDayOfTheWeek";
-import checkTimeIntervalOverlaps from "@shared/utils/checkTimeIntervalOverlaps";
-import getTimeIntervalDuration from "@shared/utils/getTimeIntervalDuration";
-import validateAndFormatTime from "@shared/utils/validateAndFormatTime";
+import IDayOfTheWeek, { ValidDaysOfTheWeekList } from "../../../shared/interfaces/IDayOfTheWeek";
+import checkTimeIntervalOverlaps from "../../../shared/utils/checkTimeIntervalOverlaps";
+import getTimeIntervalDuration from "../../../shared/utils/getTimeIntervalDuration";
+import validateAndFormatTime from "../../../shared/utils/validateAndFormatTime";
 import { injectable, container, inject } from "tsyringe";
 import IRestaurantRepository from "../repositories/IRestaurantRepository";
 
