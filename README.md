@@ -48,12 +48,12 @@ Resposta: lista com os valores formatados dos dias da semana, para preenchimento
 - **Cadastro de um novo restaurante**  
 Endpoint: (POST)"/restaurants/restaurant"  
 Requisição: {  
-> name: string  
-> street: string  
-> number: string  
-> neighborhood: string  
-> city: string  
-> state: string  
+    name: string  
+    street: string  
+    number: string  
+    neighborhood: string  
+    city: string  
+    state: string  
 }  
 Obs.: todos os parâmetros são obrigatórios para cadastro de um novo restaurante.  
 Resposta: dados do novo restaurante cadastrado.  
